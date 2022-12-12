@@ -1,4 +1,4 @@
-package com.tiernoparla.clases;
+package daw.programacion.clases;
 
 public class Empleado {
 
@@ -15,7 +15,6 @@ public class Empleado {
         this.lastName = lastName;
         this.salary = salary;
     } // Empleado
-
 
     // meths
     public int getId() {
@@ -34,21 +33,27 @@ public class Empleado {
         return this.salary;
     }
 
-
     public void setSalary(double salary) {
         this.salary = salary;
     }
 
+    public String getName() {
+        return this.firstName + " " + this.lastName;
+    }
+
+    public double getAnnualSalary() {
+        return this.salary * 12;
+    }
+
+    public double raiseSalary(double percentage) {
+        this.salary = this.salary*(1+percentage/100);
+        return this.salary;
+    }
 
     @Override
     public String toString() {
         return "Empleado [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", salary=" + salary
                 + "]";
     }
-
-
-
-    
-    
 
 } // Empleado
