@@ -41,12 +41,14 @@ public class Factura {
         this.precioUnitario = precioUnitario;
     }
 
+    public double getTotal() {
+        return this.precioUnitario * this.cantidad;
+    }
+
     @Override
     public String toString() {
         return "Factura [id=" + id + ", desc=" + desc + ", cantidad=" + cantidad + ", precioUnitario=" + precioUnitario
                 + "]";
     }
-
-    
 
 } // Factura
