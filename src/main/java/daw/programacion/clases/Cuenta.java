@@ -18,8 +18,21 @@ public class Cuenta {
         this.nombreCliente = nombreCliente;
         this.saldo = saldo;
     }
-    
 
     // meths
+    public String getId() {
+        return id;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    
+    
     
 } // Cuenta
