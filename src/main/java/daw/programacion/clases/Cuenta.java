@@ -6,7 +6,7 @@ public class Cuenta {
     private String id;
     private String nombreCliente;
     private double saldo = 0;
-    
+
     // constr
     public Cuenta(String id, String nombreCliente) {
         this.id = id;
@@ -32,7 +32,9 @@ public class Cuenta {
         return saldo;
     }
 
-    
-    
-    
+    @Override
+    public String toString() {
+        return "Cuenta [id=" + id + ", nombreCliente=" + nombreCliente + ", saldo=" + saldo + "]";
+    }
+
 } // Cuenta
