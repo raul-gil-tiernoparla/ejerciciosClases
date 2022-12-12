@@ -32,6 +32,20 @@ public class Cuenta {
         return saldo;
     }
 
+    public double credito(double cantidad) {
+        this.saldo -= cantidad;
+        return this.saldo;
+    }
+
+    public double debito(double cantidad) {
+        if (cantidad <= this.saldo) {
+            this.saldo -= cantidad;
+        } else {
+            System.out.println("El saldo es insuficiente.");
+        }
+        return this.saldo;
+    }
+
     @Override
     public String toString() {
         return "Cuenta [id=" + id + ", nombreCliente=" + nombreCliente + ", saldo=" + saldo + "]";
