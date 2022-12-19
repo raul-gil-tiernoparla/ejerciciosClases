@@ -22,6 +22,10 @@ public class CuentaTest {
         cuenta1 = null;
     }
 
-    
+    @Test
+    public void elIdConElPrimerConstructorEstaOk(){
+        String expected = "Cd45gt";
+        assertEquals(expected, cuenta1.getId(), "El id debería ser: 'Cd45gt'");
+    }
     
 }
