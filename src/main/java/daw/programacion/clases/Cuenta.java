@@ -58,7 +58,7 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        return "Cuenta [id=" + id + ", nombreCliente=" + nombreCliente + ", saldo=" + saldo + "]";
+        return "Cuenta [id=" + this.id + ", nombreCliente=" + this.nombreCliente + ", saldo=" + this.saldo + "]";
     }
 
 } // Cuenta
