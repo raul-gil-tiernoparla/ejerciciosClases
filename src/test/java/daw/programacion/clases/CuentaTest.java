@@ -63,15 +63,43 @@ public class CuentaTest {
     }
 
     @Test
-    public void elSaldoConElSegundoConstructorEsCero() {
+    public void elSaldoConElSegundoConstructorEstaOk() {
         double expected = 123.45;
-        assertEquals(expected, cuenta2.getSaldo(), "El saldo por defecto debería ser 0");
+        assertEquals(expected, cuenta2.getSaldo(), "El saldo debería ser 123.45");
     }
 
     @Test
     public void elMetodoToStringConElSegundoConstructorFuncionaOk() {
         String expected = "Cuenta [id=" + "Cd45gt" + ", nombreCliente=" + "Ana Botín" + ", saldo=" + "123.45" + "]";
         assertEquals(expected, cuenta2.toString());
+    }
+
+    @Test
+    public void siSacoCreditoYNoMePasoDeSaldoElSaldoSeActualizaBien(){
+        double cantidad = 23.77;
+        double expected = cuenta2.getSaldo() - cantidad;
+        assertEquals(expected, cuenta2.credito(cantidad));
+    }
+
+    @Test
+    public void siSacoCreditoYSiMePasoDeSaldoElSaldoSeActualizaBien(){
+        double cantidad = 2543.77;
+        double expected = cuenta2.getSaldo() - cantidad;
+        assertEquals(expected, cuenta2.credito(cantidad));
+    }
+
+    @Test
+    public void siSacoCeroElSaldoSeActualizaBien(){
+        double cantidad = 0.0;
+        double expected = cuenta2.getSaldo() - cantidad;
+        assertEquals(expected, cuenta2.credito(cantidad));
+    }
+
+    @Test
+    public void siSacoNegativoElSaldoSeActualizaBien(){
+        double cantidad = -5413.45;
+        double expected = cuenta2.getSaldo() - cantidad;
+        assertEquals(expected, cuenta2.credito(cantidad));
     }
 
 }
